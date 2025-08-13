@@ -523,7 +523,7 @@ def main():
         if SYNC_WAIT:
             # Align sleep to the next candle boundary in UTC
             period = int(WAIT_SECONDS)
-            now = datetime.datetime.utcnow()
+            now = datetime.datetime.now(datetime.timezone.utc)
             ts = now.timestamp()
             try:
                 import math
@@ -532,7 +532,7 @@ def main():
                 # Fallback ceil without math
                 next_ts = int(-(-ts // period) * period)
             sleep_s = max(1, int(next_ts - ts))
-            eta = datetime.datetime.utcfromtimestamp(next_ts).strftime('%Y-%m-%d %H:%M:%S')
+            eta = datetime.datetime.fromtimestamp(next_ts, tz=datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
             logging.info(f"sync wait: next candle in {sleep_s} seconds (until {eta} UTC)")
             time.sleep(sleep_s)
         else:
