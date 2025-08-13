@@ -1,0 +1,13 @@
+{
+    "agent": {
+        "model": "gpt-oss:20b",
+        "wait_seconds": "sync",
+        "candle_granularity": "1H",
+        "max_turns": 10
+
+    },
+    "coinbase": {
+        "coinbase_api_key": "COINBASE_API_KEY",
+        "coinbase_api_secret": "COINBASE_API_SECRET"
+    }
+}
