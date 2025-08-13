@@ -60,9 +60,8 @@ pip install -r requirements.txt
 ## Configuration (`config.json`)
 
 Quick start:
-- Copy `example_config.json` to `config.json` in the project root.
-- Fill in your real Coinbase API key and secret values.
-- `config.json` is already in `.gitignore` and will not be committed.
+- Rename `example_config.json` to `config.json` in the project root.
+- Fill in your real Coinbase API key and secret values. Coinbase credentials are optional paper trading is the default.
 
 `config.json` supports both nested and flat formats. Recommended nested structure:
 
